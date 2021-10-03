@@ -31,13 +31,12 @@ const CreateGame = () => {
                 e.preventDefault()
                 axios.post("http://localhost:3500/app/create", {
                     name: name, email: email, title: quizTitle,
-                    question: question, answer: answer, option1: option1, option2: option2, option3: option3,type:type
+                    question: question, answer: answer, option1: option1, option2: option2, option3: option3,type:type.toLowerCase()
                 })
 
                     .then((response) => {
                         console.log(response.data.message)
                         setId(response.data.message)
-                        alert(id)
                         removeValues()
                     })
             }}>
